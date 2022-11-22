@@ -131,7 +131,7 @@ export async function putOnePokemon(req, res) {
         };
 
     try {
-        const queryPut = await query(`UPDATE pokemons SET name='${editPokemon?.name}',image='${editPokemon?.image}',attack=${editPokemon?.attack},defense=${editPokemon?.defense},description='${editPokemon?.defense}' WHERE id=${id};`);
+        const queryPut = await query(`UPDATE pokemons SET name='${editPokemon?.name}',image='${editPokemon?.image}',attack=${editPokemon?.attack},defense=${editPokemon?.defense},description='${editPokemon?.description}' WHERE id=${id};`);
         
         res.statusCode = 200;
         response.data = [editPokemon];
