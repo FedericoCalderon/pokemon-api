@@ -2,10 +2,13 @@
   "name": "pokemon-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
+  "engines": {
+    "node": "14.x"
+  },
   "type": "module",
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "node src/app.js",
     "populate-db": "node src/db/populate.js",
     "reset-database": "node src/db/reset-database.js"
   },
@@ -16,8 +19,7 @@
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
-    "mysql": "github:mysqljs/mysql",
-    "nodemon": "^2.0.19"
+    "mysql": "github:mysqljs/mysql"
   },
   "devDependencies": {
     "dotenv": "^16.0.1"
