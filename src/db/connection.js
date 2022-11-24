@@ -4,10 +4,11 @@ import { config } from "dotenv";
 config();
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  host: process.env.DB_PROD_HOST,
+  user: process.env.DB_PROD_USERNAME,
+  password: process.env.DB_PROD_PASSWORD,
+  database: process.env.DB_PROD_NAME,
+  ssl: { rejectUnauthorized: true }
 })
 
 export let query = function (sql, values) {
@@ -15,8 +16,10 @@ export let query = function (sql, values) {
   return new Promise((resolve, reject) => {
     pool.getConnection(function (err, connection) {
       if (err) {
+        console.log('\n\n!!!!!!!!!!!conection fail!!!!!!!!!\n\n')
         reject(err)
       } else {
+        console.log('\n\n!!!!!!!!!!!conection success!!!!!!!!!\n\n')
         connection.query(sql, values, (err, rows) => {
 
           if (err) {
