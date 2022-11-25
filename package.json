@@ -9,6 +9,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "populate-db": "node src/db/populate.js",
     "reset-database": "node src/db/reset-database.js"
   },
