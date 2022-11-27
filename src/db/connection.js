@@ -3,8 +3,6 @@ import { errorMessage } from '../utils/aux.methods.db.js';
 import { config } from "dotenv";
 config();
 
-console.log(process.env.ENVIRONME)
-
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
